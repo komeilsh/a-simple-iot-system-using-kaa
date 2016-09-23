@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="E:\term8\finalProject\CellMonitor\app\libs\kaa-android-ep-sdk-qCoTwE8kv2LA0FmA0pp63nCOVm4.jar"
+        jumboMode="true"
+        revision="23.0.0"
+        sha1="37104e9a9c2b1a0b15641c5b1e4f58d173458061">
+        <dex dex="E:\term8\finalProject\CellMonitor\app\build\intermediates\transforms\dex\debug\folders\1000\2\kaa-android-ep-sdk-qCoTwE8kv2LA0FmA0pp63nCOVm4_cb0dd8eef17778309b117215a6cc621ca89d590e\classes.dex" />
+    </item>
+
+</items>
