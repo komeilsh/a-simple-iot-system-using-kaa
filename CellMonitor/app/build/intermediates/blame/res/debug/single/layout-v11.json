@@ -1,5 +1,9 @@
 [
     {
+        "merged": "E:\\term8\\finalProject\\a-simple-iot-system-using-kaa\\CellMonitor\\app\\build\\intermediates\\res\\merged\\debug\\layout-v11\\abc_screen_content_include.xml",
+        "source": "E:\\term8\\finalProject\\a-simple-iot-system-using-kaa\\CellMonitor\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\21.0.3\\res\\layout-v11\\abc_screen_content_include.xml"
+    },
+    {
         "merged": "E:\\term8\\finalProject\\CellMonitor\\app\\build\\intermediates\\res\\merged\\debug\\layout-v11\\abc_screen_content_include.xml",
         "source": "E:\\term8\\finalProject\\CellMonitor\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\21.0.3\\res\\layout-v11\\abc_screen_content_include.xml"
     }

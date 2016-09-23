@@ -1,5 +1,462 @@
 [
     {
+        "outputFile": "E:\\term8\\finalProject\\a-simple-iot-system-using-kaa\\CellMonitor\\app\\build\\intermediates\\res\\merged\\debug\\values-v11\\values-v11.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 55,
+                    "endLine": 3,
+                    "endColumn": 12,
+                    "endOffset": 140
+                },
+                "from": {
+                    "file": "E:\\term8\\finalProject\\a-simple-iot-system-using-kaa\\CellMonitor\\app\\src\\main\\res\\values-v11\\styles.xml",
+                    "position": {
+                        "startLine": 20,
+                        "startColumn": 4,
+                        "startOffset": 643,
+                        "endLine": 21,
+                        "endColumn": 12,
+                        "endOffset": 728
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 4,
+                    "startColumn": 4,
+                    "startOffset": 145,
+                    "endLine": 9,
+                    "endColumn": 12,
+                    "endOffset": 559
+                },
+                "from": {
+                    "file": "E:\\term8\\finalProject\\a-simple-iot-system-using-kaa\\CellMonitor\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\21.0.3\\res\\values-v11\\values.xml",
+                    "position": {
+                        "startLine": 3,
+                        "startColumn": 4,
+                        "startOffset": 56,
+                        "endLine": 8,
+                        "endColumn": 12,
+                        "endOffset": 470
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 10,
+                    "startColumn": 4,
+                    "startOffset": 564,
+                    "endLine": 15,
+                    "endColumn": 12,
+                    "endOffset": 984
+                },
+                "from": {
+                    "file": "E:\\term8\\finalProject\\a-simple-iot-system-using-kaa\\CellMonitor\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\21.0.3\\res\\values-v11\\values.xml",
+                    "position": {
+                        "startLine": 10,
+                        "startColumn": 4,
+                        "startOffset": 476,
+                        "endLine": 15,
+                        "endColumn": 12,
+                        "endOffset": 896
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 16,
+                    "startColumn": 4,
+                    "startOffset": 989,
+                    "endLine": 21,
+                    "endColumn": 12,
+                    "endOffset": 1412
+                },
+                "from": {
+                    "file": "E:\\term8\\finalProject\\a-simple-iot-system-using-kaa\\CellMonitor\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\21.0.3\\res\\values-v11\\values.xml",
+                    "position": {
+                        "startLine": 17,
+                        "startColumn": 4,
+                        "startOffset": 902,
+                        "endLine": 22,
+                        "endColumn": 12,
+                        "endOffset": 1325
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 22,
+                    "startColumn": 4,
+                    "startOffset": 1417,
+                    "endLine": 27,
+                    "endColumn": 12,
+                    "endOffset": 1838
+                },
+                "from": {
+                    "file": "E:\\term8\\finalProject\\a-simple-iot-system-using-kaa\\CellMonitor\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\21.0.3\\res\\values-v11\\values.xml",
+                    "position": {
+                        "startLine": 24,
+                        "startColumn": 4,
+                        "startOffset": 1331,
+                        "endLine": 29,
+                        "endColumn": 12,
+                        "endOffset": 1752
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 28,
+                    "startColumn": 4,
+                    "startOffset": 1843,
+                    "endLine": 33,
+                    "endColumn": 12,
+                    "endOffset": 2267
+                },
+                "from": {
+                    "file": "E:\\term8\\finalProject\\a-simple-iot-system-using-kaa\\CellMonitor\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\21.0.3\\res\\values-v11\\values.xml",
+                    "position": {
+                        "startLine": 31,
+                        "startColumn": 4,
+                        "startOffset": 1758,
+                        "endLine": 36,
+                        "endColumn": 12,
+                        "endOffset": 2182
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 34,
+                    "startColumn": 4,
+                    "startOffset": 2272,
+                    "endLine": 39,
+                    "endColumn": 12,
+                    "endOffset": 2692
+                },
+                "from": {
+                    "file": "E:\\term8\\finalProject\\a-simple-iot-system-using-kaa\\CellMonitor\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\21.0.3\\res\\values-v11\\values.xml",
+                    "position": {
+                        "startLine": 38,
+                        "startColumn": 4,
+                        "startOffset": 2188,
+                        "endLine": 43,
+                        "endColumn": 12,
+                        "endOffset": 2608
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 40,
+                    "startColumn": 4,
+                    "startOffset": 2697,
+                    "endLine": 45,
+                    "endColumn": 12,
+                    "endOffset": 3113
+                },
+                "from": {
+                    "file": "E:\\term8\\finalProject\\a-simple-iot-system-using-kaa\\CellMonitor\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\21.0.3\\res\\values-v11\\values.xml",
+                    "position": {
+                        "startLine": 45,
+                        "startColumn": 4,
+                        "startOffset": 2614,
+                        "endLine": 50,
+                        "endColumn": 12,
+                        "endOffset": 3030
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 46,
+                    "startColumn": 4,
+                    "startOffset": 3118,
+                    "endLine": 51,
+                    "endColumn": 12,
+                    "endOffset": 3548
+                },
+                "from": {
+                    "file": "E:\\term8\\finalProject\\a-simple-iot-system-using-kaa\\CellMonitor\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\21.0.3\\res\\values-v11\\values.xml",
+                    "position": {
+                        "startLine": 52,
+                        "startColumn": 4,
+                        "startOffset": 3036,
+                        "endLine": 57,
+                        "endColumn": 12,
+                        "endOffset": 3466
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 52,
+                    "startColumn": 4,
+                    "startOffset": 3553,
+                    "endLine": 57,
+                    "endColumn": 12,
+                    "endOffset": 3981
+                },
+                "from": {
+                    "file": "E:\\term8\\finalProject\\a-simple-iot-system-using-kaa\\CellMonitor\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\21.0.3\\res\\values-v11\\values.xml",
+                    "position": {
+                        "startLine": 59,
+                        "startColumn": 4,
+                        "startOffset": 3472,
+                        "endLine": 64,
+                        "endColumn": 12,
+                        "endOffset": 3900
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 58,
+                    "startColumn": 4,
+                    "startOffset": 3986,
+                    "endLine": 63,
+                    "endColumn": 12,
+                    "endOffset": 4428
+                },
+                "from": {
+                    "file": "E:\\term8\\finalProject\\a-simple-iot-system-using-kaa\\CellMonitor\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\21.0.3\\res\\values-v11\\values.xml",
+                    "position": {
+                        "startLine": 66,
+                        "startColumn": 4,
+                        "startOffset": 3906,
+                        "endLine": 71,
+                        "endColumn": 12,
+                        "endOffset": 4348
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 64,
+                    "startColumn": 4,
+                    "startOffset": 4433,
+                    "endColumn": 77,
+                    "endOffset": 4506
+                },
+                "from": {
+                    "file": "E:\\term8\\finalProject\\a-simple-iot-system-using-kaa\\CellMonitor\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\21.0.3\\res\\values-v11\\values.xml",
+                    "position": {
+                        "startLine": 73,
+                        "startColumn": 4,
+                        "startOffset": 4354,
+                        "endColumn": 78,
+                        "endOffset": 4428
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 65,
+                    "startColumn": 4,
+                    "startOffset": 4511,
+                    "endColumn": 91,
+                    "endOffset": 4598
+                },
+                "from": {
+                    "file": "E:\\term8\\finalProject\\a-simple-iot-system-using-kaa\\CellMonitor\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\21.0.3\\res\\values-v11\\values.xml",
+                    "position": {
+                        "startLine": 75,
+                        "startColumn": 4,
+                        "startOffset": 4434,
+                        "endColumn": 92,
+                        "endOffset": 4522
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 66,
+                    "startColumn": 4,
+                    "startOffset": 4603,
+                    "endColumn": 89,
+                    "endOffset": 4688
+                },
+                "from": {
+                    "file": "E:\\term8\\finalProject\\a-simple-iot-system-using-kaa\\CellMonitor\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\21.0.3\\res\\values-v11\\values.xml",
+                    "position": {
+                        "startLine": 77,
+                        "startColumn": 4,
+                        "startOffset": 4528,
+                        "endColumn": 90,
+                        "endOffset": 4614
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 67,
+                    "startColumn": 4,
+                    "startOffset": 4693,
+                    "endLine": 162,
+                    "endColumn": 12,
+                    "endOffset": 11417
+                },
+                "from": {
+                    "file": "E:\\term8\\finalProject\\a-simple-iot-system-using-kaa\\CellMonitor\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\21.0.3\\res\\values-v11\\values.xml",
+                    "position": {
+                        "startLine": 79,
+                        "startColumn": 4,
+                        "startOffset": 4620,
+                        "endLine": 174,
+                        "endColumn": 12,
+                        "endOffset": 11344
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 163,
+                    "startColumn": 4,
+                    "startOffset": 11422,
+                    "endColumn": 94,
+                    "endOffset": 11512
+                },
+                "from": {
+                    "file": "E:\\term8\\finalProject\\a-simple-iot-system-using-kaa\\CellMonitor\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\21.0.3\\res\\values-v11\\values.xml",
+                    "position": {
+                        "startLine": 176,
+                        "startColumn": 4,
+                        "startOffset": 11350,
+                        "endColumn": 101,
+                        "endOffset": 11447
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 164,
+                    "startColumn": 4,
+                    "startOffset": 11517,
+                    "endColumn": 116,
+                    "endOffset": 11629
+                },
+                "from": {
+                    "file": "E:\\term8\\finalProject\\a-simple-iot-system-using-kaa\\CellMonitor\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\21.0.3\\res\\values-v11\\values.xml",
+                    "position": {
+                        "startLine": 178,
+                        "startColumn": 4,
+                        "startOffset": 11453,
+                        "endColumn": 123,
+                        "endOffset": 11572
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 165,
+                    "startColumn": 4,
+                    "startOffset": 11634,
+                    "endLine": 169,
+                    "endColumn": 12,
+                    "endOffset": 11993
+                },
+                "from": {
+                    "file": "E:\\term8\\finalProject\\a-simple-iot-system-using-kaa\\CellMonitor\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\21.0.3\\res\\values-v11\\values.xml",
+                    "position": {
+                        "startLine": 180,
+                        "startColumn": 4,
+                        "startOffset": 11578,
+                        "endLine": 184,
+                        "endColumn": 12,
+                        "endOffset": 11937
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 170,
+                    "startColumn": 4,
+                    "startOffset": 11998,
+                    "endLine": 215,
+                    "endColumn": 12,
+                    "endOffset": 15630
+                },
+                "from": {
+                    "file": "E:\\term8\\finalProject\\a-simple-iot-system-using-kaa\\CellMonitor\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\21.0.3\\res\\values-v11\\values.xml",
+                    "position": {
+                        "startLine": 186,
+                        "startColumn": 4,
+                        "startOffset": 11943,
+                        "endLine": 231,
+                        "endColumn": 12,
+                        "endOffset": 15575
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 216,
+                    "startColumn": 4,
+                    "startOffset": 15635,
+                    "endLine": 261,
+                    "endColumn": 12,
+                    "endOffset": 19281
+                },
+                "from": {
+                    "file": "E:\\term8\\finalProject\\a-simple-iot-system-using-kaa\\CellMonitor\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\21.0.3\\res\\values-v11\\values.xml",
+                    "position": {
+                        "startLine": 233,
+                        "startColumn": 4,
+                        "startOffset": 15581,
+                        "endLine": 278,
+                        "endColumn": 12,
+                        "endOffset": 19227
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 262,
+                    "startColumn": 4,
+                    "startOffset": 19286,
+                    "endLine": 308,
+                    "endColumn": 12,
+                    "endOffset": 23057
+                },
+                "from": {
+                    "file": "E:\\term8\\finalProject\\a-simple-iot-system-using-kaa\\CellMonitor\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\21.0.3\\res\\values-v11\\values.xml",
+                    "position": {
+                        "startLine": 280,
+                        "startColumn": 4,
+                        "startOffset": 19233,
+                        "endLine": 326,
+                        "endColumn": 12,
+                        "endOffset": 23004
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 309,
+                    "startColumn": 4,
+                    "startOffset": 23062,
+                    "endLine": 355,
+                    "endColumn": 12,
+                    "endOffset": 26847
+                },
+                "from": {
+                    "file": "E:\\term8\\finalProject\\a-simple-iot-system-using-kaa\\CellMonitor\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\21.0.3\\res\\values-v11\\values.xml",
+                    "position": {
+                        "startLine": 328,
+                        "startColumn": 4,
+                        "startOffset": 23010,
+                        "endLine": 374,
+                        "endColumn": 12,
+                        "endOffset": 26795
+                    }
+                }
+            }
+        ]
+    },
+    {
         "outputFile": "E:\\term8\\finalProject\\CellMonitor\\app\\build\\intermediates\\res\\merged\\debug\\values-v11\\values-v11.xml",
         "map": [
             {
