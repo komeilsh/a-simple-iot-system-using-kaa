@@ -25,4 +25,7 @@ dependencies {
     compile files('libs/kaa-android-ep-sdk-7u0jJRi29Oste-Gljz8F9C0E228.jar')
     compile files('libs/kaa-android-ep-sdk-Bccg1CKaxW3A1VdXu95vuatfvtM.jar')
     compile files('libs/kaa-android-ep-sdk-qCoTwE8kv2LA0FmA0pp63nCOVm4.jar')
+    compile files('libs/kaa-android-ep-sdk-I-R1c-UkWT09-j2vAtaoAxFvcmA.jar')
+    compile files('libs/kaa-android-ep-sdk-I-R1c-UkWT09-j2vAtaoAxFvcmA - Copy.jar')
+    compile files('libs/kaa-android-ep-sdk-YR4dCoxuV0-LKVZocsowiahkdwc.jar')
 }

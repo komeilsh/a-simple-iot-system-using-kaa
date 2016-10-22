@@ -41,7 +41,6 @@ import android.widget.TextView;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-
 // komeil for bluetooth
 import java.io.IOException;
 import java.io.InputStream;
@@ -91,22 +90,45 @@ public class CellMonitorFragment extends Fragment {
     private TextView mAccelerationX;
     private TextView mAccelerationY;
     private TextView mAccelerationZ;
+    //komeil bluetooth
+    private TextView myLabel;
 
     private static final Logger LOG = LoggerFactory
             .getLogger(CellMonitorApplication.class);
-
+    private static final String TAG = "MyActivity";
 
     // komeil for bluetooth
     BluetoothSocket mmSocket;
     BluetoothDevice mmDevice = null;
     final byte delimiter = 33;
     int readBufferPosition = 0;
+    public static String tempAndHumidityData = "";
 
     public void sendBtMsg(String msg2send){
         UUID uuid = UUID.fromString("94f39d29-7d6d-437d-973b-fba39e49d4ee"); //Standard SerialPortService ID
         try {
+            LOG.info("bluetoothk Tried to create socket!");
 
-            mmSocket = mmDevice.createRfcommSocketToServiceRecord(uuid);
+            Log.i(TAG, "sendBtMsg: Tried to create socket!");
+            /*
+            while (!mBluetoothAdapter.isEnabled())
+            {
+                final Handler h = new Handler();
+                final int delay = 5000; //milliseconds
+
+                h.postDelayed(new Runnable(){
+                    public void run(){
+
+                        h.postDelayed(this, delay);
+                    }
+                }, delay);
+            }*/
+            if (!mBluetoothAdapter.isEnabled())
+            {
+                return;
+            }
+                mmSocket = mmDevice.createRfcommSocketToServiceRecord(uuid);
+
             if (!mmSocket.isConnected()){
                 mmSocket.connect();
             }
@@ -122,8 +144,92 @@ public class CellMonitorFragment extends Fragment {
         }
 
     }
+    final Handler handler = new Handler();
 
+    BluetoothAdapter mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
 
+    final class workerThread implements Runnable {
+
+        private String btMsg;
+
+        public workerThread(String msg) {
+            btMsg = msg;
+        }
+
+        public void run() {
+            if (mmDevice != null) {
+                sendBtMsg(btMsg);
+                if (mmSocket.isConnected()) {
+                    while (!Thread.currentThread().isInterrupted()) {
+                        int bytesAvailable;
+                        boolean workDone = false;
+                        try {
+                            final InputStream mmInputStream;
+                            mmInputStream = mmSocket.getInputStream();
+                            bytesAvailable = mmInputStream.available();
+                            if (bytesAvailable > 0) {
+
+                                byte[] packetBytes = new byte[bytesAvailable];
+                                Log.e("Aquarium recv bt", "bytes available");
+                                byte[] readBuffer = new byte[1024];
+                                mmInputStream.read(packetBytes);
+
+                                for (int i = 0; i < bytesAvailable; i++) {
+                                    byte b = packetBytes[i];
+                                    if (b == delimiter) {
+                                        byte[] encodedBytes = new byte[readBufferPosition];
+                                        System.arraycopy(readBuffer, 0, encodedBytes, 0, encodedBytes.length);
+                                        tempAndHumidityData = new String(encodedBytes, "US-ASCII");
+                                        readBufferPosition = 0;
+
+                                        //The variable data now contains our full command
+                                        handler.post(new Runnable() {
+                                            public void run() {
+                                                myLabel.setText(tempAndHumidityData);
+                                            }
+                                        });
+
+                                        workDone = true;
+                                        break;
+
+                                    } else {
+                                        readBuffer[readBufferPosition++] = b;
+                                    }
+                                }
+
+                                if (workDone == true) {
+                                    mmSocket.close();
+                                    break;
+                                }
+
+                            }
+                        } catch (IOException e) {
+                            // TODO Auto-generated catch block
+                            e.printStackTrace();
+                        }
+                    }
+                }
+            }
+            else{
+                Set<BluetoothDevice> pairedDevices = mBluetoothAdapter.getBondedDevices();
+                LOG.info("bluetoothk searching for paired devices!");
+                if (pairedDevices.size() > 0) {
+                    LOG.info("bluetoothk found some paired devices!");
+                    for (BluetoothDevice device : pairedDevices) {
+                        if (device.getName().equals("raspberrypi")) //Note, you will need to change this to match the name of your device
+                        {
+                            Log.e("Aquarium", device.getName());
+                            LOG.info("bluetoothk now mmDevice is being assigned!");
+                            Log.i(TAG, "now mmDevice is being assigned log.i!");
+                            mmDevice = device;
+                            break;
+                        }
+                    }
+                }
+            }
+        }
+
+    };
 
 
 
@@ -159,98 +265,15 @@ public class CellMonitorFragment extends Fragment {
         mAccelerationX = (TextView) rootView.findViewById(R.id.accelerationXValue);
         mAccelerationY = (TextView) rootView.findViewById(R.id.accelerationYValue);
         mAccelerationZ = (TextView) rootView.findViewById(R.id.accelerationZValue);
-        
-        updateAllView();
-
-
         //komeil bluetooth
+        myLabel = (TextView) rootView.findViewById(R.id.btResult);
 
-        final Handler handler = new Handler();
 
-        final TextView myLabel = (TextView) rootView.findViewById(R.id.btResult);
+
+
+/*
         final Button tempButton = (Button) rootView.findViewById(R.id.tempButton);
-        final Button lightOnButton = (Button) rootView.findViewById(R.id.lightOn);
-        final Button lightOffButton = (Button) rootView.findViewById(R.id.lightOff);
-
-        BluetoothAdapter mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
-
-        final class workerThread implements Runnable {
-
-            private String btMsg;
-
-            public workerThread(String msg) {
-                btMsg = msg;
-            }
-
-            public void run()
-            {
-                sendBtMsg(btMsg);
-                while(!Thread.currentThread().isInterrupted())
-                {
-                    int bytesAvailable;
-                    boolean workDone = false;
-
-                    try {
-
-
-                        final InputStream mmInputStream;
-                        mmInputStream = mmSocket.getInputStream();
-                        bytesAvailable = mmInputStream.available();
-                        if(bytesAvailable > 0)
-                        {
-
-                            byte[] packetBytes = new byte[bytesAvailable];
-                            Log.e("Aquarium recv bt","bytes available");
-                            byte[] readBuffer = new byte[1024];
-                            mmInputStream.read(packetBytes);
-
-                            for(int i=0;i<bytesAvailable;i++)
-                            {
-                                byte b = packetBytes[i];
-                                if(b == delimiter)
-                                {
-                                    byte[] encodedBytes = new byte[readBufferPosition];
-                                    System.arraycopy(readBuffer, 0, encodedBytes, 0, encodedBytes.length);
-                                    final String data = new String(encodedBytes, "US-ASCII");
-                                    readBufferPosition = 0;
-
-                                    //The variable data now contains our full command
-                                    handler.post(new Runnable()
-                                    {
-                                        public void run()
-                                        {
-                                            myLabel.setText(data);
-                                        }
-                                    });
-
-                                    workDone = true;
-                                    break;
-
-                                }
-                                else
-                                {
-                                    readBuffer[readBufferPosition++] = b;
-                                }
-                            }
-
-                            if (workDone == true){
-                                mmSocket.close();
-                                break;
-                            }
-
-                        }
-                    } catch (IOException e) {
-                        // TODO Auto-generated catch block
-                        e.printStackTrace();
-                    }
-
-                }
-            }
-        };
-
-
         // start temp button handler
-
         tempButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 // Perform action on temp button click
@@ -259,56 +282,47 @@ public class CellMonitorFragment extends Fragment {
 
             }
         });
-
-
-        //end temp button handler
-
-        //start light on button handler
-        lightOnButton.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                // Perform action on temp button click
-
-                (new Thread(new workerThread("lightOn"))).start();
-
-            }
-        });
-        //end light on button handler
-
-        //start light off button handler
-
-        lightOffButton.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                // Perform action on temp button click
-
-                (new Thread(new workerThread("lightOff"))).start();
-
-            }
-        });
-
-        // end light off button handler
+*/
 
         if(!mBluetoothAdapter.isEnabled())
         {
-            Intent enableBluetooth = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
-            startActivityForResult(enableBluetooth, 0);
+            //Intent enableBluetooth = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
+            //startActivityForResult(enableBluetooth, 0);
+            mBluetoothAdapter.enable();
+            LOG.info("bluetoothk is turning on!");
         }
-
-        Set<BluetoothDevice> pairedDevices = mBluetoothAdapter.getBondedDevices();
-        if(pairedDevices.size() > 0)
-        {
-            for(BluetoothDevice device : pairedDevices)
-            {
-                if(device.getName().equals("raspberrypi")) //Note, you will need to change this to match the name of your device
-                {
-                    Log.e("Aquarium",device.getName());
-                    mmDevice = device;
-                    break;
+/*
+            Set<BluetoothDevice> pairedDevices = mBluetoothAdapter.getBondedDevices();
+            LOG.info("bluetoothk searching for paired devices!");
+            if (pairedDevices.size() > 0) {
+                LOG.info("bluetoothk found some paired devices!");
+                for (BluetoothDevice device : pairedDevices) {
+                    if (device.getName().equals("raspberrypi")) //Note, you will need to change this to match the name of your device
+                    {
+                        Log.e("Aquarium", device.getName());
+                        LOG.info("bluetoothk now mmDevice is being assigned!");
+                        Log.i(TAG, "now mmDevice is being assigned log.i!");
+                        mmDevice = device;
+                        break;
+                    }
                 }
-            }
-        }
-
+            }*/
+        //if(mBluetoothAdapter.isEnabled()) {
+            final Handler h = new Handler();
+            final int delay = 10000; //milliseconds
+            LOG.info("bluetoothk now in timing!");
+            h.postDelayed(new Runnable() {
+                public void run() {
+                    if (mBluetoothAdapter.isEnabled()) {
+                        updateTempAndHumidity();
+                    }
+                    h.postDelayed(this, delay);
+                }
+            }, delay);
+        //}
     //end of komeil bluetooth
-
+        updateAllView();
+        Log.i(TAG, "end of on create log.i!");
         return rootView;
     }
     
@@ -342,6 +356,7 @@ public class CellMonitorFragment extends Fragment {
         updateGpsLocation();
         // komeil
         updateAcceleration();
+        //updateTempAndHumidity();
         updateSentLogs();
     }
     
@@ -392,7 +407,7 @@ public class CellMonitorFragment extends Fragment {
 
     //added by komeil
     private void updateAcceleration() {
-        LOG.info("Update Acceleration changed!");
+        //LOG.info("Update Acceleration changed!");
         float  accelerationX = mApplication. getAccelerationX();
         String  accelerationY = mApplication.getAccelerationY();
         String  accelerationZ = mApplication.getAccelerationZ();
@@ -408,7 +423,10 @@ public class CellMonitorFragment extends Fragment {
         //}
     }
 
-
+        public void updateTempAndHumidity(){
+            LOG.info("Request for TempAndHumidity!");
+            (new Thread(new workerThread("temp"))).start();
+        }
 
 
 

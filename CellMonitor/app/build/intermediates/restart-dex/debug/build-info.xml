@@ -4,29 +4,29 @@
     api-level="21"
     density="xxxhdpi"
     format="7"
-    timestamp="19909259318284" >
+    timestamp="7840438830139" >
 
     <task
         name="javac"
-        duration="0" />
+        duration="256" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="0" />
+        duration="241" />
     <task
         name="verifier"
-        duration="0" />
+        duration="161" />
 
     <artifact
-        location="E:\term8\finalProject\CellMonitor\app\build\outputs\apk\app-debug.apk"
+        location="E:\term8\finalProject\a-simple-iot-system-using-kaa\CellMonitor\app\build\outputs\apk\app-debug.apk"
         type="MAIN" />
 
-    <build timestamp="29880742334597" >
+    <build timestamp="7840438830139" >
         <artifact
-            location="E:\term8\finalProject\CellMonitor\app\build\intermediates\transforms\dex\debug\folders\1000\5\slice_8\classes.dex"
-            type="DEX" />
+            location="E:\term8\finalProject\a-simple-iot-system-using-kaa\CellMonitor\app\build\outputs\apk\app-debug.apk"
+            type="MAIN" />
     </build>
 
 </instant-run>

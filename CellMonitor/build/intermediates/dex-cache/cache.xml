@@ -2,11 +2,46 @@
 <items version="2" >
 
     <item
-        jar="E:\term8\finalProject\CellMonitor\app\libs\kaa-android-ep-sdk-qCoTwE8kv2LA0FmA0pp63nCOVm4.jar"
-        jumboMode="true"
+        jar="E:\term8\finalProject\a-simple-iot-system-using-kaa\CellMonitor\app\libs\kaa-android-ep-sdk-YR4dCoxuV0-LKVZocsowiahkdwc.jar"
+        jumboMode="false"
         revision="23.0.0"
-        sha1="37104e9a9c2b1a0b15641c5b1e4f58d173458061">
-        <dex dex="E:\term8\finalProject\CellMonitor\app\build\intermediates\transforms\dex\debug\folders\1000\2\kaa-android-ep-sdk-qCoTwE8kv2LA0FmA0pp63nCOVm4_cb0dd8eef17778309b117215a6cc621ca89d590e\classes.dex" />
+        sha1="0777b345ac5129a7f2fe6cca2052518d3699c5bb">
+        <dex dex="E:\term8\finalProject\a-simple-iot-system-using-kaa\CellMonitor\app\build\intermediates\pre-dexed\debug\kaa-android-ep-sdk-YR4dCoxuV0-LKVZocsowiahkdwc_18d251696f733fb4cc70bfa802ec780328eeec89.jar" />
+    </item>
+    <item
+        jar="E:\term8\finalProject\a-simple-iot-system-using-kaa\CellMonitor\app\build\intermediates\exploded-aar\com.android.support\support-v4\21.0.3\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.0"
+        sha1="2c91c949a45a21cdecf26e03951e46c7beec9ad8">
+        <dex dex="E:\term8\finalProject\a-simple-iot-system-using-kaa\CellMonitor\app\build\intermediates\pre-dexed\debug\com.android.support-support-v4-21.0.3_e37469b6151d0b45e9811ebfad062154a8d1b5b9.jar" />
+    </item>
+    <item
+        jar="E:\term8\finalProject\a-simple-iot-system-using-kaa\CellMonitor\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\21.0.3\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.0"
+        sha1="81d42bf983a8741f4888a6e333e454e4a5e0eeb7">
+        <dex dex="E:\term8\finalProject\a-simple-iot-system-using-kaa\CellMonitor\app\build\intermediates\pre-dexed\debug\com.android.support-appcompat-v7-21.0.3_2a3ae9b0afb8d562a7e8723a5eaf16a48cf1999e.jar" />
+    </item>
+    <item
+        jar="E:\term8\finalProject\a-simple-iot-system-using-kaa\CellMonitor\app\libs\eventbus-2.2.1.jar"
+        jumboMode="false"
+        revision="23.0.0"
+        sha1="a18ff12a9ab5ae52fd30d42f134517997568231e">
+        <dex dex="E:\term8\finalProject\a-simple-iot-system-using-kaa\CellMonitor\app\build\intermediates\pre-dexed\debug\eventbus-2.2.1_99cc613edf0e6e8bda2c43cc2662034b3b3eb472.jar" />
+    </item>
+    <item
+        jar="F:\android-sdk\android-sdk\extras\android\m2repository\com\android\support\support-annotations\21.0.3\support-annotations-21.0.3.jar"
+        jumboMode="false"
+        revision="23.0.0"
+        sha1="4b74cefe1f0c1b819e7260c8627a14674e37fd35">
+        <dex dex="E:\term8\finalProject\a-simple-iot-system-using-kaa\CellMonitor\app\build\intermediates\pre-dexed\debug\support-annotations-21.0.3_5f1c7ba427250e0ccc30ca44cff60694a4a46f7f.jar" />
+    </item>
+    <item
+        jar="E:\term8\finalProject\a-simple-iot-system-using-kaa\CellMonitor\app\build\intermediates\exploded-aar\com.android.support\support-v4\21.0.3\jars\libs\internal_impl-21.0.3.jar"
+        jumboMode="false"
+        revision="23.0.0"
+        sha1="01ec05bfbafcc07646ba813000bf2ef11742dd03">
+        <dex dex="E:\term8\finalProject\a-simple-iot-system-using-kaa\CellMonitor\app\build\intermediates\pre-dexed\debug\internal_impl-21.0.3_c088501c077a404bbb1868ed4678f88a1848b441.jar" />
     </item>
 
 </items>

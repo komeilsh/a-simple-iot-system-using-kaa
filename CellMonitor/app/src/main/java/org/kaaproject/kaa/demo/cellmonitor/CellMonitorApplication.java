@@ -22,6 +22,7 @@ import org.kaaproject.kaa.client.KaaClient;
 import org.kaaproject.kaa.client.KaaClientPlatformContext;
 import org.kaaproject.kaa.client.SimpleKaaClientStateListener;
 import org.kaaproject.kaa.client.logging.*;
+import org.kaaproject.kaa.client.profile.ProfileContainer;
 import org.kaaproject.kaa.common.endpoint.gen.LogDeliveryErrorCode;
 import org.kaaproject.kaa.demo.cellmonitor.event.CellLocationChanged;
 import org.kaaproject.kaa.demo.cellmonitor.event.AccelerationChanged;
@@ -31,10 +32,9 @@ import org.kaaproject.kaa.demo.cellmonitor.event.SignalStrengthChanged;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import android.app.AlertDialog;
 import android.app.Application;
+import android.bluetooth.BluetoothAdapter;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorManager;
@@ -51,26 +51,10 @@ import android.telephony.gsm.GsmCellLocation;
 import de.greenrobot.event.EventBus;
 
 import java.lang.Override;
-
-
-
-
-
-
 // komeil
 import java.util.*;
 import android.hardware.SensorEventListener;
-import android.text.Editable;
-import android.text.InputType;
-import android.widget.EditText;
-
-// added by komeil
-import org.kaaproject.kaa.client.profile.ProfileContainer;
 import org.kaaproject.kaa.demo.cellmonitor.profile.CellMonitorProfile;
-
-
-import org.kaaproject.kaa.schema.system.*;
-import org.kaaproject.kaa.schema.base.*;
 
 /**
  * The implementation of the base {@link Application} class. Performs initialization of the
@@ -94,14 +78,12 @@ public class CellMonitorApplication extends Application {
     private CellMonitorPhoneStateListener mCellMonitorPhoneStateListener;
     private CellLocation mCellLocation;
     private SignalStrength mSignalStrength;
-
     private LocationManager mLocationManager;
     private GpsLocationListener mGpsLocationListener;
     private Location mGpsLocation;
 
     // komeil
     private AccelerometerClass mAccelerometer;
-
 
     private int mSentLogCount;
     private long mLastLogTime;
@@ -111,9 +93,6 @@ public class CellMonitorApplication extends Application {
 
     // added by komeil
     public CellMonitorProfile profile;
-    private boolean profileSet;
-
-
 
     @Override
     public void onCreate() {
@@ -121,18 +100,13 @@ public class CellMonitorApplication extends Application {
         mEventBus = new EventBus();
         mTelephonyManager = (TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE);
         mCellMonitorPhoneStateListener = new CellMonitorPhoneStateListener();
-
         mLocationManager = (LocationManager)  getSystemService(LOCATION_SERVICE);
         Criteria criteria = new Criteria();
         String bestProvider = mLocationManager.getBestProvider(criteria, false);
         mGpsLocation = mLocationManager.getLastKnownLocation(bestProvider);
         mGpsLocationListener = new GpsLocationListener();
-
         //komeil
         mAccelerometer = new AccelerometerClass();
-
-
-
 
         /*
          * Initialize the Kaa client using the Android context.
@@ -159,13 +133,12 @@ public class CellMonitorApplication extends Application {
         if (phoneId != null) {
             profile = new CellMonitorProfile(phoneId,null,String.valueOf(currentapiVersion),null);
         }
-
-
-
-
-
-
-
+        mClient.setProfileContainer(new ProfileContainer() {
+            @Override
+            public CellMonitorProfile getProfile() {
+                return profile;
+            }
+        });
 
 
         /*
@@ -226,20 +199,12 @@ public class CellMonitorApplication extends Application {
                 LOG.error("Unable to send log with bucketId " + bucketInfo.getBucketId() + " within defined timeout");
             }
         });
-        
+
         /*
          * Start the Kaa client workflow.
          */
         mClient.start();
 
-
-        //komeil
-        // Update to profile variable
-        //profile.setBuild("0.0.2-SNAPSHOT");
-        //profile.setOsVersion("android5new");
-
-        // Report update to Kaa SDK. Force delivery of updated profile to server.
-        //mClient.updateProfile();
 
     }
 
@@ -249,7 +214,6 @@ public class CellMonitorApplication extends Application {
         mLocationManager.removeUpdates(mGpsLocationListener);
 
         //komeil accelerometer
-        //sensorManager.unregisterListener((SensorEventListener) this);
         mAccelerometer.onPause();
         
         /*
@@ -268,7 +232,6 @@ public class CellMonitorApplication extends Application {
         mLocationManager.requestLocationUpdates(bestProvider, 0, 0, mGpsLocationListener);
 
         //komeil accelerometer
-       //mAccelerometer.mSensorManager.registerListener( mSensorManager, accelerometer, SensorManager.SENSOR_DELAY_NORMAL);
         mAccelerometer.onResume();
         
         /*
@@ -348,8 +311,8 @@ public class CellMonitorApplication extends Application {
             test.add(Float.toString(mAccelerometer.deltaX));
             test.add(Float.toString(mAccelerometer.deltaY));
             test.add(Float.toString(mAccelerometer.deltaZ));
+            test.add(getTempAndHumidity());
             cellMonitorLog.setArrayField(test);
-
             cellMonitorLog.setOtherInfo("nothing");
 
             
@@ -391,6 +354,17 @@ public class CellMonitorApplication extends Application {
     public String getAccelerationZ() {
         return Float.toString(mAccelerometer.deltaZ);
     }
+
+    public String getTempAndHumidity () {
+        BluetoothAdapter mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
+        if(mBluetoothAdapter.isEnabled()) {
+        return CellMonitorFragment.tempAndHumidityData;}
+        else{
+            return "N/A";
+        }
+    }
+
+
 
     public int getSentLogCount() {
         return mSentLogCount;
@@ -516,8 +490,6 @@ public class CellMonitorApplication extends Application {
         }
 
 
-
-
         @Override
         public void onSensorChanged(SensorEvent event) {
 
@@ -543,10 +515,10 @@ public class CellMonitorApplication extends Application {
             if(deltaX != 0 | deltaY!=0 | deltaZ != 0) {
                 sendLog();
                 mEventBus.post(new AccelerationChanged());
-                LOG.info("Acceleration changed!");
+                //LOG.info("Acceleration changed!");
             } else{
                 mEventBus.post(new AccelerationChanged());
-                LOG.info("Acceleration changed!");
+                //LOG.info("Acceleration changed!");
             }
 
             }
