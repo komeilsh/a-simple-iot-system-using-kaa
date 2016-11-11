@@ -1,0 +1,38 @@
+{
+  "type" : "record",
+  "name" : "CellMonitorProfile",
+  "namespace" : "org.kaaproject.kaa.demo.cellmonitor.profile",
+  "fields" : [ {
+    "name" : "phoneId",
+    "type" : {
+      "type" : "string",
+      "avro.java.string" : "String"
+    },
+    "displayName" : "phone id"
+  }, {
+    "name" : "password",
+    "type" : [ {
+      "type" : "string",
+      "avro.java.string" : "String"
+    }, "null" ],
+    "displayName" : "password",
+    "inputType" : "password"
+  }, {
+    "name" : "os_version",
+    "type" : {
+      "type" : "string",
+      "avro.java.string" : "String"
+    },
+    "displayName" : "version of os"
+  }, {
+    "name" : "other_info",
+    "type" : [ {
+      "type" : "string",
+      "avro.java.string" : "String"
+    }, "null" ],
+    "displayName" : "other information"
+  } ],
+  "version" : 1,
+  "dependencies" : [ ],
+  "displayName" : "cell monitor profile"
+}

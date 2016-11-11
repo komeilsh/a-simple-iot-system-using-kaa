@@ -1,0 +1,98 @@
+body
+{
+    background: #fff url(22.jpg) no-repeat;
+    background-attachment: fixed;
+    background-size:1370px 650px;
+}
+
+h1
+{
+    font: 5em WakeUp;
+    color: #fff;
+    margin: 1.5em 10px 1em 0.5em;
+    float: left;
+}
+
+h2
+{
+    font-size: 20px;
+    margin: 0 0 10px 30px;
+    padding-top: 20px;
+    color: #555;
+}
+
+h4
+{
+    font-size: 14px;
+    margin-top: 10px;
+    margin-bottom: 0;
+}
+
+p
+{
+text-align: center;
+font-size: 15px;
+}
+
+.form
+{
+    background-color: #fff;
+    width: 260px;
+    border: 1px solid #c4c4c4;
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+    margin-top: 90px;
+    margin-right: 8px;
+    float: right;
+}
+
+.line
+{
+    margin-left: 15px;
+    width: 230px;
+    height: 1px;
+    background-color: #d7d7d7;
+}
+
+.sign
+{
+    font-size: 15px;
+    background-color: #ff8000;
+    border: 1px solid #ff5800;
+    border-radius: 5px;
+    margin: 10px 70px -5px 70px;
+    height: 30px;
+    width: 120px;
+}
+
+.sign:hover
+{
+    background-color: #ff5800;
+    cursor: pointer;
+}
+
+form input[type="text"], input[type="password"]
+{
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    background-color: #f2f2f2;
+    border: 1px solid #c8c8c8;
+    width: 210px;
+    color: #838383;
+    margin-top: 20px;
+    margin-left: 15px;
+    font-size:15px;
+    padding: 5px 9px 7px 9px;
+}
+
+form input[type="checkbox"]
+{
+    margin-top: -5px;
+    margin-left: 20px;
+}
+
+@font-face
+{
+    font-family: WakeUp;
+    src: url(WakingUp.ttf);
+}
