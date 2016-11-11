@@ -8,5 +8,7 @@ The sensors which their data is getting collected are temperature and humidity f
 This project is done as final project of bacehlor degree in computer engineering at Iran University of Science and Technology, Tehran, Iran.
 
 Komeil Shah Hosseini
+&
 Milad Teimouri
+
 September 2016
